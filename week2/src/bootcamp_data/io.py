@@ -1,13 +1,14 @@
+from pathlib import Path
 import pandas as pd
 
-def read_orders_csv(path) -> pd.DataFrame:
-    """Reads a CSV file containing orders data and returns a DataFrame."""
-    pass
+NA = ["", "NA", "N/A", "null", "None", "na", "n/a", "none", "nan"]
 
+def read_orders_csv(path: Path) -> pd.DataFrame:
+    return pd.read_csv(path, na_values=NA, keep_default_na=True)
 
-def read_users_csv(path) -> pd.DataFrame:
-    """Reads a CSV file containing users data and returns a DataFrame."""
-    pass
+def read_users_csv(path: Path) -> pd.DataFrame:
+    return pd.read_csv(path, na_values=NA, keep_default_na=True)
+
 
 
 def write_parquet(df, path) -> None:
