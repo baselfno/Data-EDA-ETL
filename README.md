@@ -8,7 +8,7 @@ This guide covers running the notebook specifically, or the entire code pipeline
 
 **Clone repository:**
 ```bash
-git clone <REPO_URL>
+git clone https://github.com/baselfno/Data-EDA-ETL.git
 cd Data-EDA-ETL/week2
 ```
 
@@ -52,3 +52,4 @@ The notebook will display results directly in your browser and save figures to `
 ---
 
 **Note:** The notebook expects processed data in `data/processed/analytics_table.parquet`. If it doesn't exist, run the ETL pipeline first: `python scripts/run_etl.py`
+
