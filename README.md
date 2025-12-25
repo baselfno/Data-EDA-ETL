@@ -1,6 +1,6 @@
-# Data-EDA-ETL — Notebook Analysis
+# Data-EDA-ETL
 
-Quick guide to run the exploratory data analysis notebook only.
+This guide covers running the notebook specifically, or the entire code pipeline in general.
 
 ---
 
@@ -14,7 +14,7 @@ cd Data-EDA-ETL/week2
 
 **Create virtual environment:**
 
-Windows:
+Windows (PowerShell):
 ```bash
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -29,23 +29,40 @@ source .venv/bin/activate
 **Install dependencies:**
 ```bash
 pip install -r requirements.txt
+pip install jupyter nbconvert
 ```
 
 ---
 
-## Run Notebook
+## Run Notebook Directly
 
-**Launch Jupyter:**
+**Execute notebook from command line:**
+
+Windows (PowerShell):
 ```bash
-jupyter notebook
+jupyter nbconvert --to notebook --execute notebooks/eda.ipynb --output eda_output.ipynb
 ```
 
-**Open and run:**
-- Navigate to `notebooks/eda.ipynb`
-- Run all cells (Cell → Run All)
+macOS/Linux:
+```bash
+jupyter nbconvert --to notebook --execute notebooks/eda.ipynb --output eda_output.ipynb
+```
 
-The notebook loads `data/processed/analytics_table.parquet`, performs analysis, and saves figures to `reports/figures/`.
+This runs the notebook and saves the executed version as `eda_output.ipynb` with all outputs included.
+
+**View results:**
+- Output notebook: `notebooks/eda_output.ipynb`
+- Generated figures: `reports/figures/*.png`
 
 ---
 
-**Note:** Raw data must be in `data/raw/` and processed data in `data/processed/` for the notebook to work. If processed data doesn't exist, run the ETL pipeline first using `python scripts/run_etl.py`.
+**Alternative - Generate HTML report:**
+```bash
+jupyter nbconvert --to html --execute notebooks/eda.ipynb --output eda_report.html
+```
+
+Opens `notebooks/eda_report.html` in your browser to view results.
+
+---
+
+**Note:** The notebook expects processed data in `data/processed/analytics_table.parquet`. If it doesn't exist, run the ETL pipeline first: `python scripts/run_etl.py`
