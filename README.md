@@ -12,23 +12,14 @@ git clone https://github.com/baselfno/Data-EDA-ETL.git
 cd Data-EDA-ETL/week2
 ```
 
-**Create virtual environment:**
-
-Windows (PowerShell):
+**Sync dependencies:**
 ```bash
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+uv sync
 ```
 
-macOS/Linux:
+**Add notebook support:**
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-**Install dependencies:**
-```bash
-pip install -r requirements.txt
+uv add notebook
 ```
 
 ---
@@ -37,7 +28,7 @@ pip install -r requirements.txt
 
 **Launch Jupyter:**
 ```bash
-jupyter notebook
+uv run jupyter notebook
 ```
 
 Your browser will open automatically showing the project files.
@@ -52,4 +43,3 @@ The notebook will display results directly in your browser and save figures to `
 ---
 
 **Note:** The notebook expects processed data in `data/processed/analytics_table.parquet`. If it doesn't exist, run the ETL pipeline first: `python scripts/run_etl.py`
-
