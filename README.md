@@ -8,9 +8,13 @@ This guide covers running the notebook specifically, or the entire code pipeline
 
 **Clone repository:**
 ```bash
-git clone <https://github.com/baselfno/Data-EDA-ETL.git>
+git clone https://github.com/baselfno/Data-EDA-ETL.git
 cd Data-EDA-ETL/week2
 ```
+
+**Required dependencies:** numpy, pandas, plotly, kaleido, jupyter, notebook
+
+Make sure these are installed in your Python environment before running the notebook.
 
 **Create virtual environment:**
 
@@ -26,42 +30,23 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-**Install dependencies:**
-```bash
-pip install -r requirements.txt
-pip install jupyter nbconvert
-```
-
 ---
 
-## Run Notebook Directly
+## Run Notebook
 
-**Execute notebook from command line:**
-
-Windows (PowerShell):
+**Launch Jupyter:**
 ```bash
-jupyter nbconvert --to notebook --execute notebooks/eda.ipynb --output eda_output.ipynb
+jupyter notebook
 ```
 
-macOS/Linux:
-```bash
-jupyter nbconvert --to notebook --execute notebooks/eda.ipynb --output eda_output.ipynb
-```
+Your browser will open automatically showing the project files.
 
-This runs the notebook and saves the executed version as `eda_output.ipynb` with all outputs included.
+**Open and run the notebook:**
+1. Click on `notebooks` folder
+2. Click on `eda.ipynb` to open it
+3. Run all cells: **Cell → Run All** (or press Shift+Enter for each cell)
 
-**View results:**
-- Output notebook: `notebooks/eda_output.ipynb`
-- Generated figures: `reports/figures/*.png`
-
----
-
-**Alternative - Generate HTML report:**
-```bash
-jupyter nbconvert --to html --execute notebooks/eda.ipynb --output eda_report.html
-```
-
-Opens `notebooks/eda_report.html` in your browser to view results.
+The notebook will display results directly in your browser and save figures to `reports/figures/`.
 
 ---
 
