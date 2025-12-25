@@ -8,13 +8,9 @@ This guide covers running the notebook specifically, or the entire code pipeline
 
 **Clone repository:**
 ```bash
-git clone https://github.com/baselfno/Data-EDA-ETL.git
+git clone <REPO_URL>
 cd Data-EDA-ETL/week2
 ```
-
-**Required dependencies:** numpy, pandas, plotly, kaleido, jupyter, notebook
-
-Make sure these are installed in your Python environment before running the notebook.
 
 **Create virtual environment:**
 
@@ -28,6 +24,11 @@ macOS/Linux:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
+
+**Install dependencies:**
+```bash
+pip install -r requirements.txt
 ```
 
 ---
