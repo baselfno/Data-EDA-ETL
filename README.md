@@ -12,22 +12,14 @@ git clone https://github.com/baselfno/Data-EDA-ETL.git
 cd Data-EDA-ETL/week2
 ```
 
-**Required dependencies:** numpy, pandas, plotly, kaleido, jupyter, notebook
-
-Make sure these are installed in your Python environment before running the notebook.
-
-**Create virtual environment:**
-
-Windows (PowerShell):
+**Sync dependencies:**
 ```bash
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+uv sync
 ```
 
-macOS/Linux:
+**Add notebook support:**
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+uv add notebook
 ```
 
 ---
@@ -36,7 +28,7 @@ source .venv/bin/activate
 
 **Launch Jupyter:**
 ```bash
-jupyter notebook
+uv run jupyter notebook
 ```
 
 Your browser will open automatically showing the project files.
